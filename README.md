@@ -3,8 +3,8 @@ it's a project practicing swiftui in meta ios Meta iOS Developer Professional Ce
 its a project for creating menu for restaurant 
 
 
-vedio demo :
-https://gifs.com/gif/little-lemon-dinner-menu-pZDQK1
+vedio Demo :
+![GIF Demo](https://github.com/Ayman-Naim/Little-Lemon-dinner-menu/blob/main/screenshots/ezgif.com-video-to-gif.gif)
 
 
 
