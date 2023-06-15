@@ -4,5 +4,5 @@ its a project for creating menu for restaurant
 screenshots
 
 
+![](screenshots/1.png)
 
-![](screenshots/github-1.png?raw=true "Optional Title")
