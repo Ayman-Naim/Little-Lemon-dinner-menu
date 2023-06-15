@@ -4,9 +4,7 @@ its a project for creating menu for restaurant
 
 
 vedio demo :
-
-https://github.com/Ayman-Naim/Little-Lemon-dinner-menu/assets/52940205/0be7f14c-2da5-4678-b995-289546b3cc18
-https://github.com/Ayman-Naim/Little-Lemon-dinner-menu/blob/main/screenshots/ved.mov
+https://gifs.com/gif/little-lemon-dinner-menu-pZDQK1
 
 
 
