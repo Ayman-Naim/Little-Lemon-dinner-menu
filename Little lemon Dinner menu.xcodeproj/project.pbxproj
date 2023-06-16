@@ -81,6 +81,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E33FA09C2A3C03E400F37742 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3405B122A392B6300550D08 /* MenuCategory.swift */,
+				E3405B142A392BC500550D08 /* ingredient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E33FA09D2A3C041100F37742 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E3405ADE2A39048800550D08 /* Little_lemon_Dinner_menuApp.swift */,
+				E3405B0A2A3906B000550D08 /* MenuItemView.swift */,
+				E329180E2A3BEA8300554037 /* MenueItemDetails.swift */,
+				E3405B0C2A3913B900550D08 /* MenuItemsOptionView.swift */,
+				E3E81C5E2A3BD21400E5C5E6 /* menue-item-view.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		E3405AD22A39048800550D08 = {
 			isa = PBXGroup;
 			children = (
@@ -104,13 +125,8 @@
 		E3405ADD2A39048800550D08 /* Little lemon Dinner menu */ = {
 			isa = PBXGroup;
 			children = (
-				E3405ADE2A39048800550D08 /* Little_lemon_Dinner_menuApp.swift */,
-				E3405B0A2A3906B000550D08 /* MenuItemView.swift */,
-				E329180E2A3BEA8300554037 /* MenueItemDetails.swift */,
-				E3405B0C2A3913B900550D08 /* MenuItemsOptionView.swift */,
-				E3405B122A392B6300550D08 /* MenuCategory.swift */,
-				E3E81C5E2A3BD21400E5C5E6 /* menue-item-view.swift */,
-				E3405B142A392BC500550D08 /* ingredient.swift */,
+				E33FA09D2A3C041100F37742 /* Views */,
+				E33FA09C2A3C03E400F37742 /* Model */,
 				E3405AE22A39048A00550D08 /* Assets.xcassets */,
 				E3405AE42A39048A00550D08 /* Preview Content */,
 			);
