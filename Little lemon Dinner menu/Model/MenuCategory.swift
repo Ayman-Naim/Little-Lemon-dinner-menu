@@ -78,7 +78,7 @@ class MenuViewViewModel:Identifiable , ObservableObject {
                          MenuItem(Title: "Dessert1", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d1"),
                          MenuItem(Title: "Dessert2", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d2"),
                          MenuItem(Title: "Dessert3", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d3"),
-                         MenuItem(Title: "Dessert4", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d4")]
+                         MenuItem(Title: "Dessert4", ingredient: [.Carrot,.Pasta],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d4")]
     
                          
     

@@ -20,28 +20,8 @@ struct MenuItemView: View {
         NavigationView{
              
             ScrollView{
-                                        Text("")
-                    .navigationTitle("Menu")
-                
-                                      
-                                        .navigationBarItems(trailing:
-                                                                Button(action: {
-                                            self.showFilter = true
-                
-                                        })
-                                                            {
-                                            Image(systemName: "slider.horizontal.3")
-                                                .font(.system(size: 22))
-                                        }
-                                        ).sheet(isPresented: $showFilter, onDismiss: {
-                                            self.showFilter = false
-                
-                                        })
-                                        {
-                                            NavigationView{
-                                                MenuItemsOptionView(showFilter: $showFilter)
-                                            }
-                                        }
+                                     
+                    
                                     
                 VStack{
                     
@@ -103,7 +83,24 @@ struct MenuItemView: View {
                 }
                     
                 
-            }
+            }.navigationTitle("Menu")
+            
+            
+                .navigationBarItems(trailing:
+                                        Button(action: {
+                    self.showFilter = true
+
+                })
+                                    {
+                    Image(systemName: "slider.horizontal.3")
+                        .font(.system(size: 22))
+                }
+                ).sheet(isPresented: $showFilter)
+                {
+                    NavigationView{
+                        MenuItemsOptionView(showFilter: $showFilter)
+                    }
+                }
         }
         
         
