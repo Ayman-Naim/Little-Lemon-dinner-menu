@@ -7,7 +7,7 @@ vedio Demo :
 
 
 
-<img src="https://github.com/Ayman-Naim/Little-Lemon-dinner-menu/blob/main/screenshots/Demo.gif" width="337">
+<img src="https://github.com/Ayman-Naim/Little-Lemon-dinner-menu/blob/main/screenshots/Demo.gif" width="283">
 
 
 screenshots:
