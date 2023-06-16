@@ -13,93 +13,67 @@ struct MenuItemView: View {
     @State var offset : CGFloat = 0
     @State var startoffset :CGFloat = 0
     @State var menueItemClicked = false
-    let threcolumnsGrid = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
-    var menue = MenuViewViewModel()
-    var body: some View {
     
-            
-        
-            ScrollView{
-                
-                HStack{
-                NavigationView{
-                   
-                       // .navigationTitle("Menu")
-                  
-                        Text("")
-                        .navigationBarItems(trailing:
-                                                Button(action: {
-                            self.showFilter = true
-                            
-                        })
-                                            {
-                            Image(systemName: "slider.horizontal.3")
-                                .font(.system(size: 22))
-                        }
-                        ).sheet(isPresented: $showFilter, onDismiss: {
-                            self.showFilter = false
-                            
-                        })
-                        {
-                            NavigationView{
-                                MenuItemsOptionView(showFilter: $showFilter)
-                            }
-                        }
-                    }
-                }
+    let threcolumnsGrid = [GridItem(.flexible()),GridItem(.flexible()),GridItem(.flexible())]
+    @ObservedObject var menue = MenuViewViewModel()
+    var body: some View {
+        NavigationView{
              
+            ScrollView{
+                                        Text("")
+                    .navigationTitle("Menu")
+                
+                                      
+                                        .navigationBarItems(trailing:
+                                                                Button(action: {
+                                            self.showFilter = true
+                
+                                        })
+                                                            {
+                                            Image(systemName: "slider.horizontal.3")
+                                                .font(.system(size: 22))
+                                        }
+                                        ).sheet(isPresented: $showFilter, onDismiss: {
+                                            self.showFilter = false
+                
+                                        })
+                                        {
+                                            NavigationView{
+                                                MenuItemsOptionView(showFilter: $showFilter)
+                                            }
+                                        }
+                                    
                 VStack{
-                  
-                    
-                    HStack{
-                        Text("Menu").font(.title).bold()
-                            .frame(width: 74)
-                           
-                           
-                    }.padding(.trailing,299)
-                    
-                    
-                    
                     
                     Text(menuCatagury.Food.rawValue).font(.title).padding(.trailing,305)
                     LazyVGrid(columns: threcolumnsGrid ,alignment: .center,spacing: 12){
                         
-                        ForEach(menue.FoodMenueItem, id:\.id) { result in
-                             
-                                        NavigationLink{
-                                            MenuItemDetailsView()
-                                        
-                                        }label:{
-                                            
-                                            Image(result.image)
-                                                .resizable()
-                                                .onTapGesture {
-                                                    menueItemClicked.toggle()
-                                                    
-                                                }
-                                                .aspectRatio(1, contentMode: .fit)
-                                                .frame(width: 115  , height: 115)
-                                                Text(result.Title)
-                                        }
-                                           
-                                          
-                                            
+                        ForEach($menue.FoodMenueItem, id:\.id) { result in
+                            
+                            NavigationLink{
+                                MenuItemDetailsView(ItemChoesd: result)
                                 
+                            }label:{
+                                
+                                menue_item_view(result: result)
+                            }
+                            
+                        }
                         
                     }
-                        
-                    }
+                    
+                    
+                    
                     Text(menuCatagury.Drink.rawValue).font(.title2).padding(.trailing,305)
                     LazyVGrid(columns: threcolumnsGrid ,alignment: .center,spacing: 12){
                         
-                        ForEach(menue.DrinkMenuItem) { result in
-                            VStack{
+                        ForEach($menue.DrinkMenuItem) { result in
+                            NavigationLink{
+                                MenuItemDetailsView(ItemChoesd: result)
                                 
-                                Image(result.image).resizable()
+                            }label:{
                                 
-                                    .aspectRatio(1, contentMode: .fit)
-                                    .frame(width: 115  , height: 115)
-                                Text(result.Title)
+                                menue_item_view(result: result)
                             }
                         }
                         
@@ -115,24 +89,27 @@ struct MenuItemView: View {
                     
                     LazyVGrid(columns: threcolumnsGrid ,alignment: .center,spacing: 12){
                         
-                        ForEach(menue.DesertMenuItem) { result in
-                            VStack{
+                        ForEach($menue.DesertMenuItem) { result in
+                            NavigationLink{
+                                MenuItemDetailsView(ItemChoesd: result)
                                 
-                                Image(result.image).resizable()
+                            }label:{
                                 
-                                    .aspectRatio(1, contentMode: .fit)
-                                    .frame(width: 115  , height: 115)
-                                Text(result.Title)
-                                
-                                
+                                menue_item_view(result: result)
                             }
                         }
-                        
                     }
-                }.padding(.init(top: -307, leading: 18, bottom: 0, trailing: 10))
+                    
+                }
+                    
                 
-            }.padding([.top],-20)
-         
+            }
+        }
+        
+        
+        
+        
+
                
                        
             
@@ -150,5 +127,6 @@ struct MenuItemView_Previews: PreviewProvider {
         MenuItemView()
     }
 }
+
 
 

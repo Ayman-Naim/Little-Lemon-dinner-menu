@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol MenueItemProtocol {
     var id : UUID{get}
@@ -27,7 +28,7 @@ enum SortBy:String{
     case A_Z = "A-Z"
 }
 
-class MenuItem:Identifiable,MenueItemProtocol{
+class MenuItem:Identifiable,MenueItemProtocol,ObservableObject{
     var id = UUID()
     
     var price: Double
@@ -36,7 +37,7 @@ class MenuItem:Identifiable,MenueItemProtocol{
     
     var Price: Int
     var image : String
-    
+    var orderCount = 1000
     var Title : String
     var ingredient : [ingredient]
     init(Title: String,ingredient: [ingredient],id: UUID, price: Double, Price: Int,menurCatogry: menuCatagury,image : String) {
@@ -50,8 +51,8 @@ class MenuItem:Identifiable,MenueItemProtocol{
     }
 }
 
-class MenuViewViewModel:Identifiable{
-    var FoodMenueItem = [MenuItem(Title: "Food1", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "1.png"),
+class MenuViewViewModel:Identifiable , ObservableObject {
+    @Published var FoodMenueItem = [MenuItem(Title: "Food1", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "1.png"),
                          MenuItem(Title: "Food2", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "2.png"),
                          MenuItem(Title: "Food3", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "3.png"),
                          MenuItem(Title: "Food4", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "4.png"),
@@ -64,7 +65,7 @@ class MenuViewViewModel:Identifiable{
                          MenuItem(Title: "Food11", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "3.png"),
                          MenuItem(Title: "Food12", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Food,image: "4.png")]
     
-    var DrinkMenuItem = [
+    @Published var DrinkMenuItem = [
                          MenuItem(Title: "Drink1", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Drink,image: "k1"),
                          MenuItem(Title: "Drink2", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Drink,image: "k2"),
                          MenuItem(Title: "Drink3", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Drink,image: "k3"),
@@ -73,7 +74,7 @@ class MenuViewViewModel:Identifiable{
                          MenuItem(Title: "Drink6", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Drink,image: "k3"),
                          MenuItem(Title: "Drink7", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Drink,image: "k1"),
                          MenuItem(Title: "Drink8", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Drink,image: "k4")]
-    var DesertMenuItem = [
+    @Published var DesertMenuItem = [
                          MenuItem(Title: "Dessert1", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d1"),
                          MenuItem(Title: "Dessert2", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d2"),
                          MenuItem(Title: "Dessert3", ingredient: [.Spinach,.Broccoli],id: UUID(),price:13.5 ,Price:13 ,menurCatogry: menuCatagury.Dessert,image: "d3"),
